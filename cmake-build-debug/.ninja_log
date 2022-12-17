@@ -1,0 +1,9 @@
+# ninja log v5
+0	963	1671250860612567054	CMakeFiles/CS250_Project.dir/Course.cpp.o	ac89716293359571
+1	967	1671250860615942391	CMakeFiles/CS250_Project.dir/CourseListInsertInOrder.cpp.o	532d98a759e57cad
+2	1069	1671250860721645962	CMakeFiles/CS250_Project.dir/TestingCases.cpp.o	9b7ac7e2f968d86a
+0	1074	1671250860722552871	CMakeFiles/CS250_Project.dir/Main.cpp.o	3775e70b4c3c0070
+1	1140	1671250860791212480	CMakeFiles/CS250_Project.dir/Interface.cpp.o	52135a15d147b1fa
+1	1150	1671250860804011554	CMakeFiles/CS250_Project.dir/CourseListBigThree.cpp.o	8d3a717e8cd185a4
+0	1169	1671250860822367025	CMakeFiles/CS250_Project.dir/CourseList.cpp.o	1173bd66d3762a02
+1169	1255	1671250860912601490	CS250_Project	cace219f551a2bc5
