@@ -114,7 +114,7 @@ void processChoice(CourseList& courseList)
                 if (selection != '2')
                 {
                     cout << "Confirm the deletion request? \n"
-                         << "Type 'y' to confirm or any key to exit. " << endl;
+                            << "Type 'y' to confirm or any key to exit: ";
                     cin >> selection;
                 }
 
@@ -181,7 +181,7 @@ void processChoice(CourseList& courseList)
             if (selection != '6')
             {
                 cout << "\nWould you like to continue the program? \n"
-                        << "Type 'y' to confirm or any key to exit. " << endl;
+                        << "Type 'y' to confirm or any key to exit: ";
                 cin >> selection;
 
                 if (selection == 'y') {
