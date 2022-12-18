@@ -26,10 +26,11 @@ void processChoice(CourseList& courseList)
     }
     else
     {
-        char selection = '\0';
-        while (selection != '6')
+        bool exit = false;
+        while (!exit)
         {
             cout << "\nEnter a selection: ";
+            char selection;
             cin >> selection;
 
             if (selection == '1')
@@ -71,12 +72,38 @@ void processChoice(CourseList& courseList)
                          << course->getCourse().getCourseNumber() << ", "
                          << course->getCourse().getCourseName() << ", "
                          << course->getCourse().getCourseUnits() << " units\n";
+
+                    cout << "\nWould you like to continue the program? \n"
+                         << "Type 'y' to confirm or any key to exit: ";
+                    cin >> selection;
+
+                    if (selection == 'y')
+                    {
+                        displayMenu();
+                    }
+                    else
+                    {
+                        exit = true;
+                    }
                 }
             }
             else if (selection == '2')
             {
                 cout << "\nContact the Curriculum Committee "
                      << "to start the process of adding a course.\n";
+
+                cout << "\nWould you like to continue the program? \n"
+                     << "Type 'y' to confirm or any key to exit: ";
+                cin >> selection;
+
+                if (selection == 'y')
+                {
+                    displayMenu();
+                }
+                else
+                {
+                    exit = true;
+                }
             }
             else if (selection == '3')
             {
@@ -116,12 +143,25 @@ void processChoice(CourseList& courseList)
                     cout << "Confirm the deletion request? \n"
                             << "Type 'y' to confirm or any key to exit: ";
                     cin >> selection;
-                }
 
-                if (selection == 'y')
-                {
-                    courseList.deleteCourse(courseNumber);
-                    cout << "Course is successfully deleted." << endl;
+                    if (selection == 'y')
+                    {
+                        courseList.deleteCourse(courseNumber);
+                        cout << "Course is successfully deleted." << endl;
+                    }
+
+                    cout << "\nWould you like to continue the program? \n"
+                         << "Type 'y' to confirm or any key to exit: ";
+                    cin >> selection;
+
+                    if (selection == 'y')
+                    {
+                        displayMenu();
+                    }
+                    else
+                    {
+                        exit = true;
+                    }
                 }
             }
             else if (selection == '4')
@@ -129,6 +169,19 @@ void processChoice(CourseList& courseList)
                 string courses;
                 courseList.retrieveAllCourses(courses);
                 cout << courses;
+
+                cout << "\nWould you like to continue the program? \n"
+                     << "Type 'y' to confirm or any key to exit: ";
+                cin >> selection;
+
+                if (selection == 'y')
+                {
+                    displayMenu();
+                }
+                else
+                {
+                    exit = true;
+                }
             }
             else if (selection == '5')
             {
@@ -167,29 +220,40 @@ void processChoice(CourseList& courseList)
                 {
                     cout << "Hours required to study for this course each week: "
                          << course->getCourse().getCourseUnits() * 3 << endl;
+
+                    cout << "\nWould you like to continue the program? \n"
+                         << "Type 'y' to confirm or any key to exit: ";
+                    cin >> selection;
+
+                    if (selection == 'y')
+                    {
+                        displayMenu();
+                    }
+                    else
+                    {
+                        exit = true;
+                    }
                 }
             }
             else if (selection == '6')
             {
-                // Exit
+                exit = true;
             }
             else
             {
                 cout << "\nSelection is invalid." << endl;
-            }
 
-            if (selection != '6')
-            {
                 cout << "\nWould you like to continue the program? \n"
-                        << "Type 'y' to confirm or any key to exit: ";
+                     << "Type 'y' to confirm or any key to exit: ";
                 cin >> selection;
 
-                if (selection == 'y') {
+                if (selection == 'y')
+                {
                     displayMenu();
                 }
                 else
                 {
-                    selection = '6';
+                    exit = true;
                 }
             }
         }
